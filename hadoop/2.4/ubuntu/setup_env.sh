@@ -1,14 +1,11 @@
-# install epel
-rpm -ivh https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-
 # install openssh server
-yum -y install which coreutils python openssh-server wget ntp gzip tar openssh-clients
+apt-get install which coreutils python openssh-server wget ntp gzip tar openssh-clients
 
 # change root password
 echo 'root:changeme' |chpasswd
 
 # install gcc and java
-yum -y install gcc gcc-c++ cmake zlib-devel perl java-1.7.0-openjdk java-1.7.0-openjdk-devel
+apt-get install gcc gcc-c++ cmake zlib-devel perl java-1.7.0-openjdk java-1.7.0-openjdk-devel
 
 mkdir -p /opt
 

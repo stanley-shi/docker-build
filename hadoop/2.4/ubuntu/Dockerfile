@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER Stanley Shi(deming.shi@gmail.com)
 
-apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade
 
 VOLUME /src
 VOLUME /root/.m2
