@@ -2,13 +2,15 @@ FROM ubuntu
 
 MAINTAINER Stanley Shi(deming.shi@gmail.com)
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get -y update && apt-get -y upgrade
 
 VOLUME /src
 VOLUME /root/.m2
 
 ADD setup_env.sh /tmp/setup_env.sh
 RUN sh /tmp/setup_env.sh
+ADD adduser.sh /tmp/adduser.sh
+RUN sh /tmp/adduser.sh
 
 ENV ENV_FORREST_HOME /opt/apache-forrest-0.9
 ENV MAVEN_HOME /opt/apache-maven-3.2.1

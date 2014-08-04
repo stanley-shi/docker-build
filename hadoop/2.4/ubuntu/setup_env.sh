@@ -1,11 +1,11 @@
 # install openssh server
-apt-get install which coreutils python openssh-server wget ntp gzip tar openssh-clients
+apt-get -y install coreutils python3 openssh-server wget ntp gzip tar openssh-client
 
 # change root password
 echo 'root:changeme' |chpasswd
 
 # install gcc and java
-apt-get install gcc gcc-c++ cmake zlib-devel perl java-1.7.0-openjdk java-1.7.0-openjdk-devel
+apt-get -y install gcc g++ cmake zlib1g-dev perl openjdk-7-jdk 
 
 mkdir -p /opt
 
