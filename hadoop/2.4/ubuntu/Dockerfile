@@ -17,7 +17,7 @@ ENV MAVEN_HOME /opt/apache-maven-3.2.1
 ENV XERCESC_HOME /opt/xerces-c_2_8_0-x86_64-linux-gcc_3_4
 ENV FINDBUGS_HOME /opt/findbugs-2.0.3 
 ENV JAVA_HOME /etc/alternatives/java_sdk_openjdk 
-ENV PATH \$MAVEN_HOME/bin/:\$FINDBUGS_HOME/bin/:\$PATH 
+ENV PATH $MAVEN_HOME/bin/:$FINDBUGS_HOME/bin/:$PATH 
 
 WORKDIR /src
 EXPOSE 22

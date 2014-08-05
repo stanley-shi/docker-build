@@ -7,10 +7,12 @@ fi
 
 
 ROOTDIR=$(dirname $0)
-myname=$(whoami)
-myid=$(id -u $myname)
+#myname=$(whoami)
+myname=stanley
+#myid=$(id -u $myname)
+myid=1000
 echo "useradd -u $myid $myname" >adduser.sh
 echo "echo '$myname:changeme' |chpasswd" >>adduser.sh
 
-docker build --rm -t $1 --force-rm $ROOTDIR
+docker build --rm -t $1 --force-rm --no-cache $ROOTDIR
 
