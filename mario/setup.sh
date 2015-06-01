@@ -4,7 +4,7 @@
 sed -i  's/127.0.0.1/0.0.0.0/' /etc/mysql/my.cnf
 service mysql start
 mysqladmin password 'dangerous'
-mysql -u root --password=dangerous -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;"
+mysql -u root --password=dangerous -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'dangerous' WITH GRANT OPTION;"
 
 
 ### setup tomcat gui password
@@ -17,5 +17,11 @@ cat > /opt/apache-tomcat-6.0.44/conf/tomcat-users.xml <<EOF
   <user username="tomcat" password="tomcat" roles="tomcat,admin-gui,manager-gui"/>
 </tomcat-users>
 
+
+EOF
+
+cat > /opt/apache-tomcat-6.0.44/bin/setenv.sh <<EOF
+
+CLASSPATH=`/opt/hadoop-2.5.2/bin/hadoop classpath`
 
 EOF
